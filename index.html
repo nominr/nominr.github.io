@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Nomin R.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+            overflow-x: hidden;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            transition: background 0.5s ease;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background 0.5s;
+        }
+
+        body.dark-mode nav {
+            background: #1e1e1e;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode nav ul li a {
+            color: #e0e0e0;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        body.dark-mode .project-card {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .show-details {
+            max-height: 1000px;
+        }
+
+        .toggle-theme {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2a9d8f;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .toggle-theme:hover {
+            background: #248174;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2a9d8f;
+            color: #ffffff;
+            padding: 0.6rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: #248174;
+        }
+    </style> -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+            overflow-x: hidden;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        nav {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        body.dark-mode nav {
+            background: #1e1e1e;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        body.dark-mode nav ul li a {
+            color: #e0e0e0;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        body.dark-mode .project-card {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .show-details {
+            max-height: 1000px;
+        }
+
+        .toggle-theme {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2a9d8f;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2a9d8f;
+            color: #ffffff;
+            padding: 0.6rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .project-details ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+
+        .project-details li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-theme">🌙 Dark Mode</button>
+    <header>
+        <h1>Hi, I'm Nomin.</h1>
+        <p>Computer Science + Creative Writing @ Rice University</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Experience</a></li>
+            <li><a href="#environmental-creative">Environmental & Writing</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a Computer Science junior passionate about coding, storytelling, and sustainability. I create software that makes a positive impact.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Current Experience and Projects</h2>
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Developer - Consular Corps of Houston</h3>
+            <div class="project-details">
+                As a current developer for the Consular Corps of Houston, I'm working on a web application to manage membership and payments for the Consular Corps of Houston. The application will allow members to register, manage their profiles, and make payments securely. The goal is to streamline the membership process and improve communication within the organization.
+                <ul>
+                    <li>Developing a secure, scalable web application using React (frontend) and Firebase (backend) for user authentication, membership management, and secure payment processing for 200+ Consular Corps members.</li>
+                    <li>Implementing multi-role user management with Firebase Authentication and Node.js Cloud Functions, enforcing role-based access control for members, administrators, and visitors.</li>
+                    <li>Engineering a responsive, intuitive UI with React, offering seamless navigation, real-time data updates, and dynamic interface components.</li>
+                    <li>Designing and deploying Node.js Cloud Functions for secure server-side processing, including user role management, data validation, and Stripe payment processing (checkout sessions, webhook handling).</li>
+                    <li>Integrating Stripe for secure payment processing, automating membership payments, invoicing, and subscription management, ensuring PCI compliance.</li>
+                    <li>Establishing Firebase Firestore as a scalable, real-time database for user profiles, membership records, and secure user-generated content.</li>
+                    <li>Ensuring robust image management with Firebase Storage and Cloud Functions, including secure image upload, resizing, and URL generation.</li>
+                    <li>Collaborating directly with Consular Corps stakeholders using agile methodologies, gathering feedback, and making iterative improvements.</li>
+                    <li>Maintaining cross-browser compatibility and optimizing performance for a smooth user experience across devices and platforms.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Inventory Tool - The Tea Nook</h3>
+            <div class="project-details">
+                As current Supply Manager, I'm working to improve the way inventory is completed by developing a simple
+                inventory tool using SpringBoot (Java), PostgreSQL, and Thymeleaf. The tool will allow for easy tracking of
+                inventory levels, sales, and restocking needs. Users can register as four roles, manager, tearista, guest, or Supply.
+                The goal is to streamline the inventory process and reduce waste. 
+                
+                <ul>
+                    <li>Developing a scalable supply management platform using Spring Boot (Java) and PostgreSQL, streamlining inventory tracking and user management for the Rice community.</li>
+                    <li>Implemented secure user registration and authentication with Bcrypt encryption and PostgreSQL, ensuring secure data handling.</li>
+                    <li>Designing a role-based user dashboard for managers, staff, and administrators, providing role-specific data and functionality.</li>
+                    <li>Architecting a robust inventory tracking system with real-time supply monitoring, automatic restocking alerts, and efficient resource allocation.</li>
+                    <li>Planned features include advanced role-based access control, automated supply tracking, data analytics for inventory trends, and user notifications for low-stock alerts.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Past Experience and Projects</h2>
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>OwlDB Database (August 2024 - December 2024)</h3>
+            <div class="project-details">
+                <ul>
+                    <li>Engineered a NoSQL document database using Go, efficiently handling concurrent RESTful requests for creating, modifying, retrieving, and deleting JSON documents.</li>
+                    <li>Designed and implemented a custom skip-list indexing system for efficient concurrent access to large data sets.</li>
+                    <li>Developed robust HTTP request handlers, optimizing user interactions, schema validation, user authentication, and secure data transmission.</li>
+                    <li>Constructed a hierarchical NoSQL data structure, supporting JSON document storage, HTTP request schema validation, token authentication, and real-time updates via a RESTful API.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Order Ahead Platform - The Tea Nook (June 2024 - August 2024)</h3>
+            <div class="project-details">
+                <ul>
+                    <li>Developed a scalable web application using React (frontend) and Firebase (backend), enabling secure order submission for 8,500+ students.</li>
+                    <li>Built a secure Node.js backend with Firebase Cloud Functions, managing order processing, Stripe payments, and Firestore interactions.</li>
+                    <li>Integrated Stripe for secure payment processing, maintaining PCI compliance and providing transaction insights via secure webhooks.</li>
+                    <li>Designed an efficient data management system using Firebase Firestore for secure storage of orders, user profiles, and transactions.</li>
+                    <li>Created a dynamic, responsive React frontend for seamless item browsing, order customization, and submission.</li>
+                    <li>Secured API endpoints with Stripe webhook verification, ensuring secure transaction handling.</li>
+                    <li>Collaborated with stakeholders (student organizations, dining services) to align functionality with user needs, implementing feedback iteratively.</li>
+                    <li>Planned future enhancements, including NetID authentication, dining dollar integration, and UI improvements for a better user experience.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Machine Learning Assistant - Old Dominion University (June 2022 - August 2022)</h3>
+            <div class="project-details">
+                <ul>
+                    <li>Contributed to the implementation of an attention-based generative adversarial network (GAN) model to clean low quality engineering documents of ship decks, under the guidance of Dr. Jiang Li</li>
+                    <li>Improved from previously proposed mechanisms, outperforming traditional CycleGAN model when trained for 100, 150, and 200 epochs, achieving a precision of 0.99 and increasing Boundary F1 score by 47%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>AANHPI Youth Research Council - Girls Leadership, Evaluation Studio (August 2022 - May 2024)</h3>
+            <div class="project-details">
+                <ul>
+                    <li>Initiated and led the first national study on AANHPI youth leadership, collaborating with 30 community organizations and securing $2 million in funding.</li>
+                    <li>Designed a comprehensive data collection strategy, gathering 2,300+ AANHPI youth responses and 500 teacher responses through a national survey.</li>
+                    <li>Implemented a mixed-methods approach, integrating quantitative (3,000+ survey responses) and qualitative insights from interviews and photojournalist responses.</li>
+                    <li>Facilitated stakeholder engagement, collaborating with community organizations and educational institutions for broad representation.</li>
+                    <li>Synthesized findings into a policy brief and comprehensive report, providing actionable strategies for fostering youth leadership.</li>
+                    <li>Presented insights to national and community stakeholders, advocating for evidence-based approaches to youth empowerment.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Simple Game using UVA Game Engine (December 2022)</h3>
+            <div class="project-details">
+            A Python-based game developed using the UVA Game Engine, featuring a player-controlled character navigating to avoid enemies and eat as many apples as possible to remain
+            alive for as long as possible. The game includes a scoring system, sprint animation, and a user-friendly interface.    
+            </div>
+        </div>
+
+        <h2>Competitions</h2>
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Rice MedHacks: MedTech Design-a-Thon 2nd Place Winner (February 2024)</h3>
+            <div class="project-details">
+                <ul>
+                    <li>Conducted market research to identify a critical healthcare gap in maintaining neonatal body temperature in low- and middle-income countries (LMICs).</li>
+                    <li>Designed and prototyped a low-cost, energy-efficient neonatal incubator, reducing costs to under $125 for resource-limited healthcare facilities.</li>
+                    <li>Collaborated with healthcare professionals to refine the incubator design, ensuring practicality, efficiency, and affordability.</li>
+                    <li>Led a cross-functional team through the product design process, balancing user needs, technical feasibility, and cost efficiency.</li>
+                    <li>Evaluated existing solutions, introducing innovations for enhanced thermal regulation and safety without increasing costs.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="toggleDetails(this)">
+            <h3>Top 10% in Machine Learning Competition @ Rice University</h3>
+            <div class="project-details">
+                <ul>
+                    <li>Placed 8th out of 75 students (Top 10%) in a machine learning competition, achieving a final score of 248,368.21 on an image classification task.</li>
+                    <li>Developed a high-performance CNN using PyTorch with two convolutional layers and three fully connected layers for Fashion MNIST classification.</li>
+                    <li>Implemented a custom data preprocessing pipeline with PyTorch Transforms for efficient data loading and scaling.</li>
+                    <li>Optimized model performance using Cross-Entropy Loss and Adam Optimizer, achieving competitive accuracy.</li>
+                    <li>Utilized torchmetrics for precise model evaluation, gaining expertise in model performance metrics.</li>
+                    <li>Gained hands-on experience in deep learning fundamentals, including convolutional networks, model optimization, and image classification.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="environmental-creative">
+        <h2>Environmental & Writing</h2>
+        <p>I'm passionate about environmental issues and creative writing. I enjoy exploring the intersection of technology and storytelling to raise awareness about sustainability.</p>
+        <p>
+            More about my experience as a Research Intern for the Rice Center for Environmental Studies and creative writing samples will be available soon!
+        </p>
+    </section>
+
+    <section id="skills" style="padding: 4rem 2rem; max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 1rem;">Technical Skills</h2>
+        
+        <div style="background: #ffffff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); line-height: 1.8; font-size: 1rem;">
+            <p><strong>Programming Languages:</strong> JavaScript (React, Node.js), Java (Spring Boot), Python (PyTorch, Data Science), Go (Database Design), HTML/CSS, SQL (PostgreSQL), NoSQL (Firestore, Firebase, OwlDB).</p>
+            
+            <p><strong>Frameworks and Libraries:</strong> React, Node.js, Firebase, Spring Boot, Thymeleaf, PyTorch, TensorFlow, Express.js.</p>
+            
+            <p><strong>Cloud and Backend Services:</strong> Firebase (Firestore, Cloud Functions, Authentication, Storage), AWS (S3, EC2), Stripe API (Secure Payments), Netlify (Hosting).</p>
+            
+            <p><strong>Databases:</strong> Firebase Firestore (NoSQL), PostgreSQL (Relational), OwlDB (Custom NoSQL), SQLite.</p>
+            
+            <p><strong>Web Development:</strong> Frontend (React, Responsive Design, UI/UX Design), Backend (RESTful APIs, Node.js, Java Spring Boot), Secure HTTP (HTTPS, Webhooks).</p>
+            
+            <p><strong>Secure Authentication and Payments:</strong> Firebase Authentication, OAuth, Stripe (PCI Compliance, Secure Payment Processing, Webhook Verification).</p>
+            
+            <p><strong>API Development and Integration:</strong> RESTful APIs, Stripe API (Payments), Firebase API (Cloud Functions, Firestore, Storage), JSON Handling.</p>
+            
+            <p><strong>Security and Compliance:</strong> HTTPS, Secure API Development, User Role Management, PCI Compliance (Stripe), Secure Data Handling (Bcrypt Encryption).</p>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact me!</h2>
+        <p>Email: <a href="mailto:nr58@rice.edu">nomin@rice.edu</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nomin-r-264100361/" target="_blank">linkedin.com/in/nomin-r-264100361/</a></p>
+    </section>
+
+    <button class="back-to-top" onclick="scrollToTop()">⬆️</button>
+
+    <script>
+        document.querySelector('.toggle-theme').onclick = function() {
+            document.body.classList.toggle('dark-mode');
+            this.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        };
+
+        document.addEventListener('scroll', () => {
+            document.querySelectorAll('section').forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight - 50) {
+                    section.classList.add('show');
+                }
+            });
+            document.querySelector('.back-to-top').style.display = window.scrollY > 400 ? 'block' : 'none';
+        });
+
+        function toggleDetails(card) {
+            const details = card.querySelector('.project-details');
+            details.classList.toggle('show-details');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
